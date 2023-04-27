@@ -1,0 +1,7 @@
+discord-webhook
+fastapi
+pymongo
+PyYAML
+snscrape
+uvicorn
+python-dotenv

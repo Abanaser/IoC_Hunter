@@ -1,0 +1,20 @@
+regexes:
+  - name: md5_hash
+    pattern: '[a-fA-F0-9]{32}'
+    description: Matches an MD5 hash value.
+
+  - name: sha1_hash
+    pattern: '[a-fA-F0-9]{40}'
+    description: Matches a SHA-1 hash value.
+
+  - name: ipv4_address
+    pattern: '(?:[0-9]{1,3}\.){3}[0-9]{1,3}'
+    description: Matches a standard IPv4 address.
+
+  - name: ipv4_address_defanged
+    pattern: '\d{1,3}\[\.\]\d{1,3}\[\.\]\d{1,3}\[\.\]\d{1,3}'
+    description: Matches a defanged IPv4 address, where "." is replaced with "[.]".
+  
+  - name: url 
+    pattern: '(?:[a-zA-Z]+:\/\/)?[\w]+?(?:\[\.\]|\.)[\w]+?(?:\[\.\]|\.)[\w]+'
+    description: Matches normal URLs, and defanged URLs that starts with http, https, hxxp, and hxxps. 
