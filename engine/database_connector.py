@@ -9,13 +9,14 @@ import os
 def connect_to_db():
     load_dotenv()
     try:
-        conn_str = os.getenv("DB_CONNECTION_URI")
+        conn_str = os.environ["DB_CONNECTION_URI"]
         client = pymongo.MongoClient(conn_str, serverSelectionTimeoutMS=5000)
         server_info = client.server_info()
-        print(f"Connected to: {server_info}")
+        server_info = client.address
+        print(f"Connected to: {server_info[0]}")
         # Database name
         global database
-        database = client[os.getenv("DB_NAME")]
+        database = client[os.environ["DB_NAME"]]
         return True
     except:
         return False

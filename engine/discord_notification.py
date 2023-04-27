@@ -6,7 +6,7 @@ import os
 def discord(data):
     load_dotenv()
     webhook = DiscordWebhook(
-        url=os.getenv("DISCORD_WEBHOOK_URL"),
+        url=os.environ["DISCORD_WEBHOOK_URL"],
     )
 
     # Role, or specific user to ping
