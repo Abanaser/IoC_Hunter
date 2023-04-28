@@ -1,4 +1,5 @@
 import twitter.twitter_collection as twitter_collection
+import mastodon_impl.mastodon_collection as mastodon_collection
 from engine.api import app
 from engine.database_connector import connect_to_db
 import uvicorn
@@ -15,6 +16,11 @@ def start_twitter():
     twitter_collection.run()
 
 
+def start_mastodon():
+    print("Starting Mastodon Collection")
+    mastodon_collection.run()
+
+
 def main():
     # Connecting to DB
     if not connect_to_db():
@@ -25,8 +31,12 @@ def main():
     api_thread.start()
 
     # Start the twitter collection in a separate thread
-    twitter_thread = threading.Thread(target=start_twitter)
-    twitter_thread.start()
+    # twitter_thread = threading.Thread(target=start_twitter)
+    # twitter_thread.start()
+
+    # Start the mastodon collection in a separate thread
+    mastodon_thread = threading.Thread(target=start_mastodon)
+    mastodon_thread.start()
 
 
 if __name__ == "__main__":

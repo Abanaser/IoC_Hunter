@@ -5,3 +5,5 @@ PyYAML
 snscrape
 uvicorn
 python-dotenv
+beautifulsoup4
+Mastodon.py
