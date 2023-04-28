@@ -27,6 +27,7 @@ IoC Hunter is a powerful, user-friendly tool designed to identify and investigat
 - API endpoint to query all collected IoCs for further integration
 - Extensible and modular architecture
 - Utiltiz regex to customize findings based on orgnization's needs 
+- Real-time notification
 
 ## Installation 🛠️
 
