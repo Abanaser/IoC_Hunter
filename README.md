@@ -38,7 +38,7 @@ The proposed solution aims to create an application with three main goals: a cen
   Figure 1: Architecture of IoC Hunter
 
 ![Workflow](images/flow.png)
-  Figure 2: Workflow of IoC Hunter
+Figure 2: Workflow of IoC Hunter
 ## Installation 🛠️
 
 ### Requirements
