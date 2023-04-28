@@ -61,14 +61,8 @@ The proposed solution aims to create an application with three main goals: a cen
 
 That's it! You're ready to use IoC Hunter.
 ## Demo 👨‍💻
-![Docker](images/code-img.png)
-  Figure 3: Docker compose starting 
-![Database](images/db-img.png)
-  Figure 4: Database being populated 
-![API](images/api-img.png)
-  Figure 5: Querying API for collected IoCs 
-![Discord](images/discord-img.png)
-  Figure 6: Real time notification 
+![Demo](images/final-gif.gif)
+    Figure 3: Demo of IoC Hunter
 
 ## Contribution 🤝
 
