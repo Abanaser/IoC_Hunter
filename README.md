@@ -11,11 +11,13 @@ IoC Hunter is a powerful, user-friendly tool designed to identify and investigat
 - [IoC Hunter 🌐🔍](#ioc-hunter-)
   - [Table of Contents 📚](#table-of-contents-)
   - [Features 🌟](#features-)
+  - [Architecture 📃](#architecture-)
   - [Installation 🛠️](#installation-️)
     - [Requirements](#requirements)
     - [Steps](#steps)
     - [Customization](#customization)
     - [Run](#run)
+  - [Demo 👨‍💻](#demo-)
   - [Contribution 🤝](#contribution-)
   - [License ⚖️](#license-️)
   - [Credits 🙌](#credits-)
@@ -23,12 +25,20 @@ IoC Hunter is a powerful, user-friendly tool designed to identify and investigat
 ## Features 🌟
 
 - Robust IoC collection and extraction
-- Supports multiple file social media platfroms as plugins 
+- Supports multiple social media platfroms as plugins 
 - API endpoint to query all collected IoCs for further integration
 - Extensible and modular architecture
 - Utiltiz regex to customize findings based on orgnization's needs 
-- Real-time notification
+- Real-time notification via Discord webhooks 
 
+## Architecture 📃
+The proposed solution aims to create an application with three main goals: a centralized database for storing IoCs, a notification manager for real-time updates, and an API for sharing IoCs in JSON format. A NoSQL database is chosen for its flexibility, scalability, and JSON compatibility. The engine architecture has three components: notification manager, database connector, and API, along with an automated scraper for efficient IoC collection and extraction. The end-user experience is user-friendly, with a simple API interaction and customizable notifications via Slack, Discord, or email.
+
+![Architecture](images/Arch.png)
+  Figure 1: Architecture of IoC Hunter
+
+![Workflow](images/flow.png)
+  Figure 2: Workflow of IoC Hunter
 ## Installation 🛠️
 
 ### Requirements
@@ -41,14 +51,24 @@ IoC Hunter is a powerful, user-friendly tool designed to identify and investigat
 2. Navigate to the project directory
 
 ### Customization
-1. Make a copy of .env.example, and add any needed information 
+1. Make a copy of .env.example (name it .env,) and add any needed information 
 2. Customize twitter/twitter_keywords and/or mastodon_impl/mastodon_keywords to customize the search terms
 
 ### Run
 1. Run Docker compose: `$ docker compose up -d` 
-
+2. API documentation cloud be found at http://localhost:8000/docs
+   * Every collector will store its collected IoCs in a NoSQL collection nameed with the platform's name (e.g., Twitter collector will save IoCs in a collection called Twitter) 
 
 That's it! You're ready to use IoC Hunter.
+## Demo 👨‍💻
+![Docker](images/code-img.png)
+  Figure 3: Docker compose starting 
+![Database](images/db-img.png)
+  Figure 4: Database being populated 
+![API](images/api-img.png)
+  Figure 5: Querying API for collected IoCs 
+![Discord](images/discord-img.png)
+  Figure 6: Real time notification 
 
 ## Contribution 🤝
 

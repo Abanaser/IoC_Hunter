@@ -31,8 +31,8 @@ def main():
     api_thread.start()
 
     # Start the twitter collection in a separate thread
-    # twitter_thread = threading.Thread(target=start_twitter)
-    # twitter_thread.start()
+    twitter_thread = threading.Thread(target=start_twitter)
+    twitter_thread.start()
 
     # Start the mastodon collection in a separate thread
     mastodon_thread = threading.Thread(target=start_mastodon)
